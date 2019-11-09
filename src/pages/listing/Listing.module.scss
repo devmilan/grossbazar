@@ -1,0 +1,10 @@
+.product_listing{
+    display: flex;
+    .left{
+        width: 300px;
+    }
+    .right{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

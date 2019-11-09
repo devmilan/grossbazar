@@ -1,0 +1,97 @@
+*, *::after, *::before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; }
+  
+  html, body {
+    height: 100%; 
+}
+  
+  body {
+    line-height: 24px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    visibility: visible;
+    font-family: "Rubik", sans-serif;
+    color: #222222; 
+    background: #F5F5F9;
+}
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    margin-top: 0; }
+  
+  h1 {
+    font-size: 48px;
+    line-height: 1;
+    font-weight: 700; }
+  
+  h2 {
+    font-size: 36px;
+    line-height: 36px; }
+  
+  h3 {
+    font-size: 30px;
+    line-height: 30px; }
+  
+  h4 {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 700; }
+  
+  h5 {
+    font-size: 14px;
+    line-height: 18px; }
+  
+  h6 {
+    font-size: 12px;
+    line-height: 14px; }
+  
+  p:last-child {
+    margin-bottom: 0; }
+  
+  a, button {
+    color: inherit;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer; }
+  
+  a, button, img, input, span {
+    -webkit-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s; }
+  
+  *:focus {
+    outline: none !important; }
+  
+  a:focus {
+    color: inherit;
+    outline: none;
+    text-decoration: none; }
+  
+  a:hover {
+    text-decoration: none; }
+  
+  button, input[type="submit"] {
+    cursor: pointer; }
+  
+  img {
+    max-width: 100%;
+    height: auto; }
+  
+  ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0; }
+  
+  figure {
+    padding: 0;
+    margin: 0; }
+
+
+
+// common styles
+
+.gb_container{
+    padding: 30px 5%;
+}

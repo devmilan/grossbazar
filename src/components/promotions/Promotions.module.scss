@@ -1,0 +1,25 @@
+.promotions{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    .img{
+        margin: 10px;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 15px;
+        &:hover{
+            img{
+                transform: scale(1.05);
+            }
+        }
+        &:first-child{
+            margin-left: 0;
+        }
+        &:last-child{
+            margin-right: 0;
+        }
+        img{
+            max-width: 100%;
+        }
+    }
+}
