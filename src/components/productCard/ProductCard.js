@@ -15,7 +15,7 @@ import css from './ProductCard.module.scss';
                 <div className={css.category}>Category</div>
                 <div className={css.name}>Mangoo</div>
                 <div className={css.price}>Rs.100.00</div>
-                <button className={css.add_to_cart}><i className="fa fa-shopping-cart"></i></button>
+                <button className={css.add_to_cart} title="Add to cart"><i className="fa fa-shopping-cart"></i></button>
             </div>
         </div>
     )

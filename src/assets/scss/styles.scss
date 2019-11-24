@@ -70,7 +70,9 @@
     text-decoration: none; }
   
   a:hover {
-    text-decoration: none; }
+    text-decoration: none;
+    color: inherit;
+   }
   
   button, input[type="submit"] {
     cursor: pointer; }

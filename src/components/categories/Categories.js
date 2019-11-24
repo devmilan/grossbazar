@@ -11,7 +11,7 @@ const Categories = () => {
     return (
         <div className={css.categories}>
 
-            <Link to="/listing" className={css.category}>
+            <Link to="/listing/grocery-staples" className={css.category}>
                 <div className={css.category_product_content}>
                     <h4>GROCERY & STAPLES</h4>
                     <p>12 Products</p>
@@ -21,7 +21,7 @@ const Categories = () => {
                 </div>
             </Link>
 
-            <Link to="/listing" className={css.category}>
+            <Link to="/listing/beverages" className={css.category}>
                 <div className={css.category_product_content}>
                     <h4>BEVERAGES</h4>
                     <p>12 Products</p>
@@ -31,7 +31,7 @@ const Categories = () => {
                 </div>
             </Link>
 
-            <Link to="/listing" className={css.category}>
+            <Link to="/listing/fruits-vegetables" className={css.category}>
                 <div className={css.category_product_content}>
                     <h4>FRUITS & VEGETABLES</h4>
                     <p>12 Products</p>
@@ -51,7 +51,7 @@ const Categories = () => {
                 </div>
             </Link>
 
-            <Link to="/listing" className={css.category}>
+            <Link to="/listing/dairy-bakery" className={css.category}>
                 <div className={css.category_product_content}>
                     <h4>DAIRY & BAKERY</h4>
                     <p>12 Products</p>
@@ -60,7 +60,7 @@ const Categories = () => {
                     <img src={require('../../assets/img/categories/milk.jpg')} alt="" />
                 </div>
             </Link>
-            <Link to="/listing" className={css.category}>
+            <Link to="/listing/baby-care" className={css.category}>
                 <div className={css.category_product_content}>
                     <h4>BABY CARE</h4>
                     <p>12 Products</p>
@@ -70,9 +70,9 @@ const Categories = () => {
                 </div>
             </Link>
 
-            <Link to="/listing" className={css.category}>
+            <Link to="/listing/beauty-personal-care" className={css.category}>
                 <div className={css.category_product_content}>
-                    <h4>BEUTY CARE</h4>
+                    <h4>BEAUTY CARE</h4>
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
@@ -80,7 +80,7 @@ const Categories = () => {
                 </div>
             </Link>
 
-            <Link to="/listing" className={css.category}>
+            <Link to="/listing/home-appliances" className={css.category}>
                 <div className={css.category_product_content}>
                     <h4>HOME APPLIANCES</h4>
                     <p>12 Products</p>
@@ -90,9 +90,9 @@ const Categories = () => {
                 </div>
             </Link>
 
-            <Link to="/listing" className={css.category}>
+            <Link to="/listing/electronics" className={css.category}>
                 <div className={css.category_product_content}>
-                    <h4>Cells &amp; Tablets</h4>
+                    <h4>Electronics</h4>
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>

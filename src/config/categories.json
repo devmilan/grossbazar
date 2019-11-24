@@ -1,0 +1,52 @@
+[
+    {
+        "id": "grocery-staples",
+        "name": "Grocery & Staples",
+        "image":"grocery.jpg"
+    },
+    {
+        "id": "beverages",
+        "name": "Beverages",
+        "image":"beverages.jpg"
+    },
+    {
+        "id": "fruits-vegetables",
+        "name": "Fruits & Vegetables",
+        "image":"mango.jpg"
+    },
+    {
+        "id": "snacks-chocos",
+        "name": "Snacks & Chocos",
+        "image":"lays.jpg"
+    },
+    {
+        "id": "dairy-bakery",
+        "name": "Dairy & Bakery",
+        "image":"milk.jpg"
+    },
+    {
+        "id": "baby-care",
+        "name": "Baby Care",
+        "image":"baby.jpeg"
+    },
+    {
+        "id": "beauty-personal-care",
+        "name": "Beauty & Personal Care",
+        "image":"beauty.jpg"
+    },
+    {
+        "id": "home-appliances",
+        "name": "Home Appliances",
+        "image":"household.jpg"
+    },
+    {
+        "id": "electronics",
+        "name": "Electronics",
+        "image":"computer.jpg"
+    },
+    {
+        "id": "party-planner",
+        "name": "Party Planner",
+        "image":"computer.jpg"
+    }
+]

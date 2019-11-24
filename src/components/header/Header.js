@@ -1,14 +1,15 @@
 import React from 'react';
 import css from './Header.module.scss';
 import Menu from '../menu/Menu';
+import { Link } from 'react-router-dom';
 
  const Header = () => {
     return (
         <div className={css.header}>
             <div className={css.top_header}>
-                <div className={css.logo}>
+                <Link to="/" className={css.logo}>
                     <img src={require('../../assets/img/logo.png')} alt=""/>
-                </div>
+                </Link>
                 <div className={css.search}>
                     <input className={css.search_input} type="text" name="" placeholder="Search..." />
                 </div>

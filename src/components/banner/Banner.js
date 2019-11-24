@@ -4,7 +4,7 @@ import css from './Banner.module.scss';
 const Banner = () => {
     return (
         <div>
-            <div className="bd-example">
+            <div className={css.banner}>
                 <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
                     <ol className="carousel-indicators">
                         <li data-target="#carouselExampleCaptions" data-slide-to="0" className="active"></li>
