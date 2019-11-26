@@ -4,6 +4,7 @@ import Banner from '../components/banner/Banner';
 import Service from '../components/serviceSection/Service';
 import Offers from '../components/offers/Offers';
 import Promotions from '../components/promotions/Promotions';
+import CallUs from '../components/callUs/Call';
 
  const Home = () => {
     return (
@@ -12,6 +13,7 @@ import Promotions from '../components/promotions/Promotions';
             <div className="gb_container">
                 <Categories/>
                 <Offers/>
+                <CallUs/>
                 <Promotions/>
             </div>
             

@@ -4,36 +4,42 @@ import ProductCard from '../../components/productCard/ProductCard';
 import css from './Listing.module.scss';
 
 const Listing = () => {
-    const [products, setProducts] = useState([]);
-    const [loading, setLoading] = useState(false);
+	const [products, setProducts] = useState([]);
+	const [loading, setLoading] = useState(false);
 
-    useEffect(() => {
-        const getProduct = async () => {
-          try {
-            setLoading("true");
-            const res = await axios.get(`https://grossbazar-api.herokuapp.com/api/products`);
-            setProducts(res.data);
-          } catch (err) {
-              console.log('err in fetching producta', err)
-            setLoading("null");
-          }
-        }
-        getProduct();
-    },[]);
+	useEffect(() => {
+		const getProduct = async () => {
+			try {
+				setLoading(true);
+				const res = await axios.get(
+					`https://grossbazar-api.herokuapp.com/api/products`
+				);
+                setProducts(res.data);
+                setLoading(false);
+			} catch (err) {
+				console.log('err in fetching producta', err);
+				setLoading(false);
+			}
+		};
+		getProduct();
+	}, []);
 
-
-    return (
-        <div className={css.product_listing}>
-            <div className={css.left}>
-
-            </div>
-            <div className={css.right}>
-                {products && products.data && products.data.length>0 && products.data.map((product,i)=>
-                    <ProductCard product={product} key={i}/>
-                )}
-            </div>
-        </div>
-    )
-}
+	return (
+		<div className={css.product_listing}>
+            {loading && <div> Loading..</div>}
+			<div className={css.product_listing_container}>
+				<div className={css.left}></div>
+				<div className={css.right}>
+					{products &&
+						products.data &&
+						products.data.length > 0 &&
+						products.data.map((product, i) => (
+							<ProductCard product={product} key={i} />
+						))}
+				</div>
+			</div>
+		</div>
+	);
+};
 
 export default Listing;

@@ -1,6 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from './pages/Layout';
+import Cart from './pages/cart/Cart';
 const Home = lazy(() => import('./pages/Home'));
 const Listing = lazy(() => import('./pages/listing/Listing'));
 const Details = lazy(() => import('./pages/Details'));
@@ -34,6 +35,7 @@ const App = () => {
             <Route exact path="/terms-and-conditions" component={TermsConditions} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/cart" component={Cart} />
             <Route path="/admin" component={Admin} />
             <Route component={NotFound} />
           </Switch>

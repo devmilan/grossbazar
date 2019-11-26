@@ -1,0 +1,35 @@
+.cart_page{
+    min-height: 500px;
+    padding: 30px 5%;
+    table{
+        background-color: #fff;
+        th {
+            border-bottom: 3px solid #0063d1;
+            border-right: 1px solid #ebebeb;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: capitalize;
+            padding: 10px;
+            text-align: center;
+        }
+        .product_remove {
+            min-width: 100px;
+        }
+        .product_thumb {
+            max-width: 180px;
+        }
+        .product_name {
+            min-width: 180px;
+        }
+        .product-price {
+            min-width: 130px;
+            color: #242424;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .product_quantity {
+            min-width: 180px;
+        }
+    }
+   
+}

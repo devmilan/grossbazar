@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom';
                     <input className={css.search_input} type="text" name="" placeholder="Search..." />
                 </div>
                 <div className={css.cart}>
-                    
+                    <i className="fa fa-shopping-cart"></i>
                 </div>
             </div>
             <Menu/>

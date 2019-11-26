@@ -1,0 +1,22 @@
+.call_us{
+    background-color: #f15838;
+    padding: 20px 10%;
+    margin: 24px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    img{
+        margin-right: 25px;
+    }
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-right: 25px;
+        line-height: 1;
+    }
+    h2 {
+        font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (1920 - 320)));
+        font-weight: 700;
+    }
+}
