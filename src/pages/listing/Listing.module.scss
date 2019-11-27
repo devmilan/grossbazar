@@ -1,4 +1,8 @@
 .product_listing{
+    min-height: 600px;
+}
+
+.product_listing_container{
     display: flex;
     padding: 10px 20px;
     .left{
