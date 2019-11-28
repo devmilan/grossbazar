@@ -4,6 +4,7 @@ background-color: #673ab7;
 .top_header{
     padding: 10px 5%;
     display: flex;
+    align-items: center;
     .logo{
         width: 20%;
         img{
@@ -18,10 +19,18 @@ background-color: #673ab7;
             width: 100%;
             height: 50px;
             border-radius: 30px;
-            padding: 0 10px;
+            padding: 0 20px;
             transition: width 0.4s linear;
             box-shadow: none;
             border: 1px solid #d4d4d4;
+        }
+    }
+    .account{
+        width: 20%;
+        button{
+            margin: 0 4px;
+            background: #522e92;
+            border: 1px solid #522e92;
         }
     }
 }
