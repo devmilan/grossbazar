@@ -1,19 +1,19 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link, useRouteMatch } from "react-router-dom";
 import css from './index.module.scss';
+import Loader from '../components/loader/Loader';
 const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Products = lazy(() => import('./pages/Products'));
 const Users = lazy(() => import('./pages/Users'));
 
 
-const renderLoader = () => <p>Loading..</p>;
+const renderLoader = () => <Loader/>;
 
 const Admin = () => {
     let { path, url } = useRouteMatch();
 
     return (
         <Router>
-
             <div className={css.mk_admin}>
                 <header>
 

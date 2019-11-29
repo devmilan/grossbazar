@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Layout from './pages/Layout';
 import Cart from './pages/cart/Cart';
+import Loader from './components/loader/Loader';
 const Home = lazy(() => import('./pages/Home'));
 const Listing = lazy(() => import('./pages/listing/Listing'));
 const Details = lazy(() => import('./pages/Details'));
@@ -17,7 +18,7 @@ const NotFound = lazy(() => import('./pages/NotFound'));
 
 
 
-const renderLoader = () => <p>Loading..</p>;
+const renderLoader = () => <Loader/>;
 
 const App = () => {
   return (

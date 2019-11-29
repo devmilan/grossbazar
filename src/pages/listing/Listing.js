@@ -3,6 +3,7 @@ import { useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
 import ProductCard from '../../components/productCard/ProductCard';
 import css from './Listing.module.scss';
+import Loader from '../../components/loader/Loader';
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -11,16 +12,18 @@ const useQuery = () => {
 const Listing = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
+  const query = useQuery();
   const { categoryid } = useParams();
   const subcategory = query.get("subcategory");
-  const query = useQuery();
-  const page = query.get("page") || 1 ;
-  const limit = query.get("limit") || 12 ; 
+  const page = query.get("page") || 1;
+  const limit = query.get("limit") || 12;
   const sortBy = query.get("sort_by");
-
+  const priceLessthen = query.get("price_lte");
+  const priceGreterthen = query.get("price_gte");
 
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     getProduct();
   }, []);
 
@@ -28,15 +31,12 @@ const Listing = () => {
   const getProduct = async () => {
 
     const url = `https://grossbazar-api.herokuapp.com/api/products`;
-
     let filter;
-    if(subcategory){
-      filter += `&subcategory=${subcategory}`
-    }
-    if(sortBy){
-      filter += `&sort=${subcategory}`
-    }
 
+    if (subcategory) { filter += `&subcategory=${subcategory}` };
+    if (sortBy) { filter += `&sort=${sortBy}` };
+    if (priceLessthen) { filter += `&$lte=${priceLessthen}` };
+    if (priceGreterthen) { filter += `&$gte=${priceGreterthen}` };
 
     try {
       setLoading(true);
@@ -46,7 +46,7 @@ const Listing = () => {
       setProducts(res.data);
       setLoading(false);
     } catch (err) {
-      console.log('err in fetching producta', err);
+      console.log('err in fetching product', err);
       setLoading(false);
     }
   };
@@ -55,13 +55,11 @@ const Listing = () => {
 
   return (
     <div className={css.product_listing}>
-      {loading && <div> Loading..</div>}
+      {loading && <Loader/>}
       <div className={css.product_listing_container}>
         <div className={css.left}></div>
         <div className={css.right}>
-          {products &&
-            products.data &&
-            products.data.length > 0 &&
+          {products && products.data && products.data.length > 0 &&
             products.data.map((product, i) => (
               <ProductCard product={product} key={i} />
             ))}

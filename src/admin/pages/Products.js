@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts } from '../../Api';
+import Loader from '../../components/loader/Loader';
 const Products = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -9,7 +10,6 @@ const Products = () => {
           try {
             setLoading("true");
             const res = await getProducts();
-            console.log('res===>', res)
             setProducts(res);
           } catch (err) {
               console.log('err in fetching producta', err)
@@ -21,6 +21,7 @@ const Products = () => {
 
     return (
         <div>
+          {loading && <Loader/> }
             <div className="table-responsive">
                 <table className="table">
                     <thead>
