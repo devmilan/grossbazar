@@ -17,8 +17,8 @@ import css from './Menu.module.scss';
             <li className="nav-item"><Link className="nav-link" to="/listing/beauty-personal-care">Beauty Personal Care</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/listing/beverages">Beverages</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/listing/dairy-bakery">Dairy Bakery</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/listing/fruits-vegetables">Fruits Vegetables</Link></li>
-            <li className="nav-item"><Link className="nav-link" to="/listing/grocery-staples">Grocery Staples</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/listing/fruits_and_vegitables">Fruits Vegetables</Link></li>
+            <li className="nav-item"><Link className="nav-link" to="/listing/grocery_and_staples">Grocery Staples</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/listing/home-appliances">Home Appliances</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/listing/electronics">Electronics</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/listing/party-planner">Party Planner</Link></li>
