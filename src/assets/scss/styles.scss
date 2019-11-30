@@ -92,6 +92,22 @@
 
 
 
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #673ab7;
+    border-color: #673ab7;
+}
+
+.page-link{
+  color: #522e92;
+  cursor: pointer;
+  &:hover{
+    color: #522e92;
+  }
+}
+
+
 // common styles
 
 .gb_container{
