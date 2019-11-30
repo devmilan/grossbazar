@@ -31,7 +31,7 @@ const Listing = () => {
   const getProduct = async () => {
 
     const url = `https://grossbazar-api.herokuapp.com/api/products`;
-    let filter;
+    let filter = '';
 
     if (subcategory) { filter += `&subcategory=${subcategory}` };
     if (sortBy) { filter += `&sort=${sortBy}` };
@@ -59,10 +59,15 @@ const Listing = () => {
       <div className={css.product_listing_container}>
         <div className={css.left}></div>
         <div className={css.right}>
-          {products && products.data && products.data.length > 0 &&
-            products.data.map((product, i) => (
+         <div className={css.sort_by}>
+
+         </div>
+         <div className={css.product_list}>
+            {products && products.data && products.data.length > 0 &&
+              products.data.map((product, i) => (
               <ProductCard product={product} key={i} />
             ))}
+         </div>
         </div>
       </div>
     </div>

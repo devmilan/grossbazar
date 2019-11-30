@@ -4,7 +4,7 @@ import css from './Loader.module.scss';
 const Loader = () => {
     return (
         <div className={css.backdrop}>
-          <div class={css.loader}>Loading...</div>
+          <div className={css.loader}>Loading...</div>
         </div>
     )
 }

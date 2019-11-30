@@ -1,7 +1,7 @@
 .product_card{
     box-shadow: 2px 2px 6px 0 rgba(0,0,0,.1),0 1px 1px 0 transparent,0 1px 3px 0 rgba(0,0,0,.12)!important;
     margin: 10px;
-    width: 20%;
+    width: 23.5%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,30 +11,26 @@
         background: #f6f6f6;
         margin: 0 10px;
         transition: .4s;
-        max-width: 150px;
+        max-width: 200px;
         margin: auto;
     }
     .product_info{
         padding: 10px;
         .category{
-            margin-bottom: 4px;
             display: block;
             font-weight: 300;
+            color: #522e92;
+
         }
         .name{
-            font-size: 18px;
+            font-size: 13px;
             white-space: nowrap;
             text-overflow: ellipsis;
             overflow: hidden;
             font-weight: 500;
+            margin-bottom: 13px;
         }
-        .price{
-            flex-direction: row;
-            box-sizing: border-box;
-            display: flex;
-            place-content: center space-between;
-            align-items: center;
-        }
+        
         .add_to_cart{
             background: #e2e2e2;
             cursor: pointer;
@@ -80,6 +76,25 @@
         }
         &.outstock{
             background-color: #ffc427;
+        }
+    }
+    &:nth-child(4n) {
+    margin-right: 0;
+    }
+    &:nth-child(4n+1) {
+    margin-left: 0 ;
+    }
+
+    .price_list{
+        display: flex;
+        .mrp{
+            text-decoration: line-through;
+            margin-right: 5px;
+            color: #6f6f6f;
+            font-size: 14px;
+        }
+        .price{
+            font-size: 15px;
         }
     }
 }
