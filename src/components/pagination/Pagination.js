@@ -5,7 +5,7 @@ const Pagination = ({ totalResults, itemPerPage, page, onPageClick }) => {
 
   let pages = [];
   let numberOfPages = Math.floor(totalResults / itemPerPage);
-  for (let i = 0; i < numberOfPages; i++) {
+  for (let i = 1; i < numberOfPages; i++) {
     pages.push(i)
   }
 
@@ -21,11 +21,11 @@ const Pagination = ({ totalResults, itemPerPage, page, onPageClick }) => {
             {pages.map((p, i) =>
               p === page ?
                 <li className="page-item active" aria-current="page">
-                  <span className="page-link">{p + 1}<span className="sr-only">(current)</span>
+                  <span className="page-link">{p}<span className="sr-only">(current)</span>
                   </span>
                 </li>
                 :
-                <li className="page-item" onClick={() => onPageClick(p)} ><bitton className="page-link">{p + 1}</bitton></li>
+                <li className="page-item" onClick={() => onPageClick(p)} ><bitton className="page-link">{p}</bitton></li>
             )}
             {/* <li className="page-item">
                     <a className="page-link" href="#">Next</a>
