@@ -23,6 +23,7 @@ const Listing = () => {
   const [priceLessthen, setPriceLessthen] = useState(getQueryStringValue('price_lte') || '');
   const [priceGreterthen, setPriceGreterthen] = useState(getQueryStringValue('price_gte') || '');
   const [totalResults, setTotalResults] = useState();
+  const [filters, setFilters] = useState();
 
 
   // const query = useQuery();
@@ -31,7 +32,6 @@ const Listing = () => {
 
 
   useEffect(() => {
-    console.log('hello')
     window.scrollTo(0, 0);
     getProducts();
   }, [location, page, sortBy, priceLessthen, priceGreterthen]);
@@ -75,6 +75,7 @@ const Listing = () => {
       if (res.data.data && res.data.data.length > 0) {
         setProducts(res.data.data);
         setTotalResults(res.data.total);
+        setFilters(res.data.filter[0]);
       } else {
         setProducts([]);
         setTotalResults(0);
@@ -95,24 +96,26 @@ const Listing = () => {
       {products && products.length > 0 &&
         <div className={css.product_listing_container}>
           <div className={css.left}>
-            <SideFilter onFilterclicked={onFilterclicked} />
+            {filters && <SideFilter onFilterclicked={onFilterclicked} filters={filters}/>}
           </div>
           <div className={css.right}>
-            <div className={css.sort_by}>
-              <div className="form-group col-md-4">
-                <label htmlFor="inputState">State</label>
+            <div className={css.top_bar}>
+              <div>
+                {totalResults && <h4>{totalResults} Products Found</h4>}
+              </div>
+              <div className={css.sort_by}>
                 <select id="inputState" className="form-control" onChange={onSortByChange} defaultValue="price_asc">
-                  <option value="price_asc">Price low to hign</option>
+                  <option value="price_asc">Price low to high</option>
                   <option value="price_dsc">Price high to low</option>
                   <option value="name">By Name</option>
                 </select>
               </div>
+
             </div>
             <div className={css.product_list}>
-              {products && products && products.length > 0 &&
-                products.map((product, i) => (
+              {products.map((product, i) => (
                   <ProductCard product={product} key={i} />
-                ))}
+              ))}
             </div>
             <div>
               {totalResults && totalResults > limit && <Pagination totalResults={totalResults} itemPerPage={limit} page={page} onPageClick={pageClicked} />}

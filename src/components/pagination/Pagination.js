@@ -20,12 +20,12 @@ const Pagination = ({ totalResults, itemPerPage, page, onPageClick }) => {
                   </li> */}
             {pages.map((p, i) =>
               p === page ?
-                <li className="page-item active" aria-current="page">
+                <li className="page-item active" aria-current="page" key={i}>
                   <span className="page-link">{p}<span className="sr-only">(current)</span>
                   </span>
                 </li>
                 :
-                <li className="page-item" onClick={() => onPageClick(p)} ><bitton className="page-link">{p}</bitton></li>
+                <li className="page-item" onClick={() => onPageClick(p)}  key={i}><button className="page-link">{p}</button></li>
             )}
             {/* <li className="page-item">
                     <a className="page-link" href="#">Next</a>
