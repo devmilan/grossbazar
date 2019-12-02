@@ -5,7 +5,7 @@ const Pagination = ({ totalResults, itemPerPage, page, onPageClick }) => {
 
   let pages = [];
   let numberOfPages = Math.floor(totalResults / itemPerPage);
-  for (let i = 1; i < numberOfPages; i++) {
+  for (let i = 1; i <= numberOfPages; i++) {
     pages.push(i)
   }
 

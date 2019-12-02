@@ -27,7 +27,7 @@ const App = () => {
         <Suspense fallback={renderLoader()}>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/listing/:categoryid" component={Listing} />
+            <Route exact path="/listing/:categoryid" render={({match}) => <Listing match={match} key={match.params.categoryid} />}/>
             <Route exact path="/details" component={Details} />
             <Route exact path="/about" component={About} />
             <Route exact path="/career" component={Career} />
