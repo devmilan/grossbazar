@@ -11,9 +11,9 @@ const SideFilter = ({filters, onFilterclicked}) => {
                 <label className="form-check-label" htmlFor={filter}> {filter} </label>
               </div>
             )}
-            {/* { filters && filters.maxPrice && filters.maxPrice &&
-              <div>Min ({filters.maxPrice}) and Max ({filters.maxPrice})</div>  
-            } */}
+            { filters && filters.price &&
+              <div>Min ({filters.price.min}) and Max ({filters.price.max})</div>  
+            }
         </div>
     )
 }

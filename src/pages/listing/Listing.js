@@ -75,7 +75,7 @@ const Listing = () => {
       if (res.data.data && res.data.data.length > 0) {
         setProducts(res.data.data);
         setTotalResults(res.data.total);
-        setFilters(res.data.filter[0]);
+        setFilters(res.data.filters[0]);
       } else {
         setProducts([]);
         setTotalResults(0);
@@ -96,7 +96,7 @@ const Listing = () => {
       {products && products.length > 0 &&
         <div className={css.product_listing_container}>
           <div className={css.left}>
-            {filters && <SideFilter onFilterclicked={onFilterclicked} filters={filters}/>}
+            {filters && <SideFilter onFilterclicked={onFilterclicked} filters={filters} />}
           </div>
           <div className={css.right}>
             <div className={css.top_bar}>
@@ -114,7 +114,7 @@ const Listing = () => {
             </div>
             <div className={css.product_list}>
               {products.map((product, i) => (
-                  <ProductCard product={product} key={i} />
+                <ProductCard product={product} key={i} />
               ))}
             </div>
             <div>
