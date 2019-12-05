@@ -48,7 +48,7 @@ const Listing = () => {
   }
 
   const onFilterclicked = (type, value) => {
-    setQueryStringValue(type, value)
+    setQueryStringValue(type, value);
   }
 
   const onSortByChange = (e) => {
@@ -75,7 +75,7 @@ const Listing = () => {
       if (res.data.data && res.data.data.length > 0) {
         setProducts(res.data.data);
         setTotalResults(res.data.total);
-        setFilters(res.data.filters[0]);
+        setFilters(res.data.filters);
       } else {
         setProducts([]);
         setTotalResults(0);
