@@ -2,3 +2,9 @@
     height: 438px;
     background-color: #fff;
 }
+
+@media only screen and (max-width: 600px) {
+    .banner{
+    height: auto;
+    }
+}

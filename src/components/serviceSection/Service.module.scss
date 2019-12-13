@@ -1,15 +1,25 @@
 .services{
     background-color: #fff;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px 5%;
     .service{
         padding: 10px;
         text-align: center;
+        width: 25%;
         svg{
             max-width: 70px;
             max-height: 70px;
             margin-bottom: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .services{
+        .service{
+            width: 50%;
         }
     }
 }
