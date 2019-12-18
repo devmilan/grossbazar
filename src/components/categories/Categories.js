@@ -17,7 +17,7 @@ const Categories = () => {
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
-                    <img src={require('../../assets/img/categories/grocery.jpg')} alt="" />
+                    <img src={require('../../assets/img/categories/grocery.jpg')} alt="grocery" />
                 </div>
             </Link>
 
@@ -27,7 +27,7 @@ const Categories = () => {
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
-                    <img src={require('../../assets/img/categories/beverages.jpg')} alt="" />
+                    <img src={require('../../assets/img/categories/beverages.jpg')} alt="beverages" />
                 </div>
             </Link>
 
@@ -37,7 +37,7 @@ const Categories = () => {
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
-                    <img src={require('../../assets/img/categories/mango.jpg')} alt="" />
+                    <img src={require('../../assets/img/categories/mango.jpg')} alt="mango" />
                 </div>
             </Link>
 
@@ -47,7 +47,7 @@ const Categories = () => {
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
-                    <img src={require('../../assets/img/categories/lays.jpg')} alt="" />
+                    <img src={require('../../assets/img/categories/lays.jpg')} alt="lays" />
                 </div>
             </Link>
 
@@ -57,7 +57,7 @@ const Categories = () => {
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
-                    <img src={require('../../assets/img/categories/milk.jpg')} alt="" />
+                    <img src={require('../../assets/img/categories/milk.jpg')} alt="milk" />
                 </div>
             </Link>
             <Link to="/listing/baby-care" className={css.category}>
@@ -66,7 +66,7 @@ const Categories = () => {
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
-                    <img src={require('../../assets/img/categories/baby.jpg')} alt="" />
+                    <img src={require('../../assets/img/categories/baby.jpg')} alt="baby" />
                 </div>
             </Link>
 
@@ -76,7 +76,7 @@ const Categories = () => {
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
-                    <img src={require('../../assets/img/categories/beauty.jpg')} alt="" />
+                    <img src={require('../../assets/img/categories/beauty.jpg')} alt="beauty" />
                 </div>
             </Link>
 
@@ -86,7 +86,7 @@ const Categories = () => {
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
-                    <img src={require('../../assets/img/categories/household.jpg')} alt="" />
+                    <img src={require('../../assets/img/categories/household.jpg')} alt="household" />
                 </div>
             </Link>
 
@@ -96,7 +96,7 @@ const Categories = () => {
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
-                    <img src={require('../../assets/img/categories/computer.jpg')} alt="" />
+                    <img src={require('../../assets/img/categories/computer.jpg')} alt="computer" />
                 </div>
             </Link>
 
@@ -106,7 +106,7 @@ const Categories = () => {
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
-                    <img src={require('../../assets/img/categories/computer.jpg')} alt="" />
+                    <img src={require('../../assets/img/categories/computer.jpg')} alt="computer" />
                 </div>
             </Link>
 

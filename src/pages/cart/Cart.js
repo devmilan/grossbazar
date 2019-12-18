@@ -19,7 +19,7 @@ const Cart = () => {
                     <tbody>
                         <tr>
                             <td className={css.product_remove}><a href="#"><i className="fa fa-trash-o"></i></a></td>
-                            <td className={css.product_thumb}><a href="#"><img src="https://placehold.it/100" alt=""/></a></td>
+                            <td className={css.product_thumb}><a href="#"><img src="https://placehold.it/100" alt="Handbag"/></a></td>
                             <td className={css.product_name}><a href="#">Handbag fringilla</a></td>
                             <td className={css.product_price}>£65.00</td>
                             <td className={css.product_quantity}><label>Quantity</label> <input min="1" max="100" value="1" type="number"/></td>
@@ -27,7 +27,7 @@ const Cart = () => {
                         </tr>
                         <tr>
                             <td className={css.product_remove}><a href="#"><i className="fa fa-trash-o"></i></a></td>
-                            <td className={css.product_thumb}><a href="#"><img src="https://placehold.it/100" alt=""/></a></td>
+                            <td className={css.product_thumb}><a href="#"><img src="https://placehold.it/100" alt="Handbag"/></a></td>
                             <td className={css.product_name}><a href="#">Handbag fringilla</a></td>
                             <td className={css.product_price}>£65.00</td>
                             <td className={css.product_quantity}><label>Quantity</label> <input min="1" max="100" value="1" type="number"/></td>

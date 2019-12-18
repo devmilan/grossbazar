@@ -16,22 +16,22 @@ const Banner = () => {
                     </ol>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src={require('../../assets/img/banner/kitchen-1300x400.jpg')} className="d-block w-100" alt="..." />
+                            <img src={require('../../assets/img/banner/kitchen-1300x400.jpg')} className="d-block w-100" alt="kitchen" />
                         </div>
                         <div className="carousel-item">
-                            <img src={require('../../assets/img/banner/banner5-1300x400.jpg')} className="d-block w-100" alt="..." />
+                            <img src={require('../../assets/img/banner/banner5-1300x400.jpg')} className="d-block w-100" alt="banner5" />
                         </div>
                         <div className="carousel-item">
-                            <img src={require('../../assets/img/banner/republic-day-1300x400.jpg')} className="d-block w-100" alt="..." />
+                            <img src={require('../../assets/img/banner/republic-day-1300x400.jpg')} className="d-block w-100" alt="republic-day" />
                         </div>
                         <div className="carousel-item">
-                            <img src={require('../../assets/img/banner/vegitables-1300x400.jpg')} className="d-block w-100" alt="..." />
+                            <img src={require('../../assets/img/banner/vegitables-1300x400.jpg')} className="d-block w-100" alt="vegitables" />
                         </div>
                         <div className="carousel-item">
-                            <img src={require('../../assets/img/banner/groceries-1300x400.jpg')} className="d-block w-100" alt="..." />
+                            <img src={require('../../assets/img/banner/groceries-1300x400.jpg')} className="d-block w-100" alt="groceries" />
                         </div>
                         <div className="carousel-item">
-                            <img src={require('../../assets/img/banner/banner6-1300x400.jpg')} className="d-block w-100" alt="..." />
+                            <img src={require('../../assets/img/banner/banner6-1300x400.jpg')} className="d-block w-100" alt="banner6" />
                         </div>
 
                     </div>

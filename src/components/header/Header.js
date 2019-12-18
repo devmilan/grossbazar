@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
         <div className={css.header}>
             <div className={css.top_header}>
                 <Link to="/" className={css.logo}>
-                    <img src={require('../../assets/img/logo.png')} alt=""/>
+                    <img src={require('../../assets/img/logo.png')} alt="GrossBazar"/>
                 </Link>
                 <div className={css.search}>
                     <input className={css.search_input} type="text" name="" placeholder="Search..." />

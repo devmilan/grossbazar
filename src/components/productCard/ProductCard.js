@@ -9,7 +9,7 @@ import css from './ProductCard.module.scss';
             {/* <div className={`${css.label} ${css.outstock}`}>OUT OF STOCK</div> */}
 
             <div className={css.product_img}>
-                <img src={ product.image === "no-image.jpg" ? require(`../../assets/img/${product.image}`) : product.image} alt=""/>
+                <img src={ product.image === "no-image.jpg" ? require(`../../assets/img/${product.image}`) : product.image} alt={product.name}/>
             </div>
             <div className={css.product_info}>
                 {/* <div className={css.category}>{product.category}</div> */}
