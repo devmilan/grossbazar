@@ -66,7 +66,7 @@ const Categories = () => {
                     <p>12 Products</p>
                 </div>
                 <div className={css.category_product_thumb}>
-                    <img src={require('../../assets/img/categories/baby.jpeg')} alt="" />
+                    <img src={require('../../assets/img/categories/baby.jpg')} alt="" />
                 </div>
             </Link>
 
