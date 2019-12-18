@@ -1,0 +1,6 @@
+# Redirect default Netlify subdomain to primary domain
+https://grossbazar.netlify.com/* https://grossbazar.devmilan.com/:splat 301!
+
+
+# Rewrite a path
+/*  200

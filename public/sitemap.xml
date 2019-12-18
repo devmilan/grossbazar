@@ -1,0 +1,22 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+<loc>https://devmilan.com/</loc>
+<lastmod>2019-07-27T20:43:24+00:00</lastmod>
+<priority>1.00</priority>
+</url>
+<url>
+<loc>https://devmilan.com/projects/</loc>
+<lastmod>2019-07-27T20:43:24+00:00</lastmod>
+<priority>0.80</priority>
+</url>
+<url>
+<loc>https://devmilan.com/sites/</loc>
+<lastmod>2019-07-27T20:43:24+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+<url>
+<loc>https://devmilan.com/blog/</loc>
+<lastmod>2019-07-27T20:43:24+00:00</lastmod>
+<priority>0.64</priority>
+</url>
+</urlset>

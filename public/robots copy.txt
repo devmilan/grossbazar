@@ -1,0 +1,7 @@
+# robots.txt
+User-agent: *
+Crawl-delay: 10
+Disallow: /sites/
+Disallow: /blog/
+Disallow: /cgi-bin/
+Sitemap: http://devmilan.com/sitemap.xml
