@@ -1,5 +1,5 @@
 .call_us{
-    background-color: #f15838;
+    background-color: #f44c04;
     padding: 20px 10%;
     margin: 24px 0 0;
     display: flex;
@@ -17,6 +17,5 @@
     }
     h2 {
         font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (1920 - 320)));
-        font-weight: 700;
     }
 }
