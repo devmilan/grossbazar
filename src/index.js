@@ -1,5 +1,6 @@
 import React from 'react';
 import { hydrate, render } from "react-dom";
+import { BrowserRouter} from 'react-router-dom'
 import './assets/scss/styles.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -8,9 +9,9 @@ import * as serviceWorker from './serviceWorker';
 const rootElement = document.getElementById("root");
 
 if (rootElement.hasChildNodes()) {
-  hydrate(<App />, rootElement);
+  hydrate(<BrowserRouter><App /></BrowserRouter>, rootElement);
 } else {
-  render(<App />, rootElement);
+  render(<BrowserRouter><App /></BrowserRouter>, rootElement);
 }
 
 serviceWorker.unregister();

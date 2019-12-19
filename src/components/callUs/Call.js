@@ -6,7 +6,7 @@ const CallUs = () => {
         <div className={css.call_us}>
             <img src={require('../../assets/img/call.png')} className="img-fluid" alt="call" />
             <h3>if you have any question please call us</h3>
-            <h2>123-456-7890</h2>
+            <h2>+91-8456938783</h2>
         </div>
     )
 }

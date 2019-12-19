@@ -8,12 +8,13 @@ const Products = () => {
     useEffect(() => {
         const getAllProducts = async () => {
           try {
-            setLoading("true");
+            setLoading(true);
             const res = await getProducts();
             setProducts(res);
+            setLoading(false);
           } catch (err) {
               console.log('err in fetching producta', err)
-            setLoading("null");
+            setLoading(false);
           }
         }
         getAllProducts();

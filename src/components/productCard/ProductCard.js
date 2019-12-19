@@ -4,9 +4,11 @@ import css from './ProductCard.module.scss';
  const ProductCard = ({product}) => {
     return (
         <div className={css.product_card}>
-            <div className={`${css.label} ${css.new}`}>NEW</div>
-            {product.price < product.mrp && <div className={`${css.label} ${css.sale}`}>-{Math.ceil((product.price / product.mrp) * 100)}%</div>}
-            {/* <div className={`${css.label} ${css.outstock}`}>OUT OF STOCK</div> */}
+            <div className={css.label_section}>
+              {/* <div className={`${css.label} ${css.outstock}`}>OUT OF STOCK</div> */}
+              <div className={`${css.label} ${css.new}`}>NEW</div>
+              {product.price < product.mrp && <div className={`${css.label} ${css.sale}`}>-{Math.ceil((product.price / product.mrp) * 100)}%</div>}
+            </div>
 
             <div className={css.product_img}>
                 <img src={ product.image === "no-image.jpg" ? require(`../../assets/img/${product.image}`) : product.image} alt={product.name}/>
