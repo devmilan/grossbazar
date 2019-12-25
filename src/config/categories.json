@@ -1,18 +1,18 @@
 [
     {
-        "id": "grocery_staples",
+        "id": "grocery_and_staples",
         "name": "Grocery & Staples",
         "image":"grocery.jpg"
+    },
+    {
+        "id": "fruits_and_vegitables",
+        "name": "Fruits & Vegetables",
+        "image":"mango.jpg"
     },
     {
         "id": "beverages",
         "name": "Beverages",
         "image":"beverages.jpg"
-    },
-    {
-        "id": "fruits_vegetables",
-        "name": "Fruits & Vegetables",
-        "image":"mango.jpg"
     },
     {
         "id": "snacks_chocos",
@@ -27,7 +27,7 @@
     {
         "id": "baby_care",
         "name": "Baby Care",
-        "image":"baby.jpeg"
+        "image":"baby.jpg"
     },
     {
         "id": "beauty_personal_care",
