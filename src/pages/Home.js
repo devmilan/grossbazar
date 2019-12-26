@@ -5,18 +5,18 @@ import Service from '../components/serviceSection/Service';
 import Offers from '../components/offers/Offers';
 import Promotions from '../components/promotions/Promotions';
 import CallUs from '../components/callUs/Call';
+import ErrorBoundary from '../util/ErrorBoundary';
 
  const Home = () => {
     return (
         <>
-            <Banner/>
+            <ErrorBoundary><Banner/></ErrorBoundary>
             <div className="gb_container">
-                <Categories/>
-                <Offers/>
-                <CallUs/>
-                <Promotions/>
+                <ErrorBoundary><Categories/></ErrorBoundary>
+                <ErrorBoundary><Offers/></ErrorBoundary>
+                <ErrorBoundary><CallUs/></ErrorBoundary>
+                <ErrorBoundary><Promotions/></ErrorBoundary>
             </div>
-            
             <Service/>
         </>
     )

@@ -33,4 +33,29 @@ background-color: #673ab7;
             border: 1px solid #522e92;
         }
     }
+
+    @media only screen and (max-width: 600px) {
+        flex-direction: column;
+        .logo{
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+         .search{
+            position: absolute;
+            width: 68%;
+            top: 0;
+            right: 20px;
+            .search_input{
+                height: 35px;
+                padding: 0 10px;
+            }
+         }
+        .account{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+    }
 }

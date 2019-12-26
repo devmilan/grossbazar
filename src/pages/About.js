@@ -2,7 +2,7 @@ import React from 'react';
 
  const About = () => {
     return (
-        <div>
+        <div className="gb_container">
             <h1>What is grossbazar.com ?</h1>
             <p>Grossbazar.com is an online store where one can get all his needs in one store. We have 15000 products and 1000 brands where you will find everything what you are looking for.</p>
             <p>We are delivering fresh vegetables and fruits, groceries and staples, beverages, personal-care products and home appliances at cheap price as compare to the market price.</p>

@@ -2,7 +2,7 @@ import React from 'react';
 
  const TermsConditions = () => {
     return (
-        <div>
+        <div className="gb_container">
             <ul>
               <li>Exchange can be done after three days of delivery.</li>
               <li>We can't exchange the item at the time of delivery.</li>

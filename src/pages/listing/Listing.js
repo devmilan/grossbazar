@@ -8,6 +8,7 @@ import css from './Listing.module.scss';
 import Loader from '../../components/loader/Loader';
 import Pagination from '../../components/pagination/Pagination';
 import SideFilter from '../../components/sideFilter/SideFilter';
+import ErrorBoundary from '../../util/ErrorBoundary';
 
 // const useQuery = () => {
 //   return new URLSearchParams(useLocation().search);
@@ -114,7 +115,7 @@ const Listing = () => {
             </div>
             <div className={css.product_list}>
               {products.map((product, i) => (
-                <ProductCard product={product} key={i} />
+                <ErrorBoundary><ProductCard product={product} key={i} /></ErrorBoundary>
               ))}
             </div>
             <div>
