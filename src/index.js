@@ -14,4 +14,4 @@ if (rootElement.hasChildNodes()) {
   render(<BrowserRouter><App /></BrowserRouter>, rootElement);
 }
 
-serviceWorker.unregister();
+serviceWorker.register();
