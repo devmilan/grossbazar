@@ -9,12 +9,27 @@
     img{
         margin-right: 25px;
     }
-    h3 {
-        font-size: 18px;
-        margin-right: 25px;
-        line-height: 1;
+    .info{
+        display: flex;
+        align-items: center;
+        h3 {
+            font-size: 18px;
+            margin-right: 25px;
+            line-height: 1;
+        }
+        h2 {
+            font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (1920 - 320)));
+        }
+
     }
-    h2 {
-        font-size: calc(20px + (36 - 20) * ((100vw - 320px) / (1920 - 320)));
+    @media only screen and (max-width: 600px) {
+        .info{
+            flex-direction: column;
+            text-align: center;
+             h3 {
+                margin-right: 0;
+             }
+        }
     }
+   
 }
