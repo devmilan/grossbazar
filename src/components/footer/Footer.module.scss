@@ -14,9 +14,14 @@
 
 .footer_socials{
     text-align: center;
-    padding: 30px 0 10px;
+    margin: 30px 0 10px;
+    display: flex;
+    justify-content: center;
     a{
-        margin: 0 10px;;
+        margin: 0 10px;
+        i{
+            display: block;
+        }
     }
 }
 

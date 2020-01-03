@@ -11,7 +11,8 @@ import { Link } from 'react-router-dom';
                     <img src={require('../../assets/img/logo.png')} alt="GrossBazar"/>
                 </Link>
                 <div className={css.search}>
-                    <input className={css.search_input} type="text" name="" placeholder="Search..." />
+                  <label id="lbl-main-menu-mob">Select Item</label>
+                  <input className={css.search_input} type="text" name="" placeholder="Search..." aria-labelledby="lbl-main-menu-mob"/>
                 </div>
                 <div className={css.account}>
                       <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#login">

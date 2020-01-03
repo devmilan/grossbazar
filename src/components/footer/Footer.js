@@ -51,24 +51,24 @@ const Footer = () => {
 				<div className="row pb-3">
 					<div className="col-md-12">
 						<div className={css.footer_socials}>
-							<a  className="icons-sm" href="https://devmilan.com" target="_blank" rel="noopener noreferrer">
-								<i className="fab fa-facebook-f fa-lg white-text mr-md-4"> </i>
+							<a  className="icons-sm" href="https://devmilan.com" target="_blank" rel="noopener noreferrer"  aria-label="Facebook">
+								<i className="fab fa-facebook-f fa-lg white-text mr-md-4"/>
 							</a>
 
-							<a  className="icons-sm" href="https://devmilan.com" target="_blank" rel="noopener noreferrer">
-								<i className="fab fa-twitter fa-lg white-text mx-md-4"> </i>
+							<a  className="icons-sm" href="https://devmilan.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+								<i className="fab fa-twitter fa-lg white-text mx-md-4"/>
 							</a>
 
-							<a  className="icons-sm" href="https://devmilan.com" target="_blank" rel="noopener noreferrer">
-								<i className="fab fa-linkedin fa-lg white-text mx-md-4"> </i>
+							<a  className="icons-sm" href="https://devmilan.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+								<i className="fab fa-linkedin fa-lg white-text mx-md-4"/>
 							</a>
 
-							<a  className="icons-sm" href="https://devmilan.com" target="_blank" rel="noopener noreferrer">
-								<i className="fab fa-instagram fa-lg white-text mx-md-4"> </i>
+							<a  className="icons-sm" href="https://devmilan.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+								<i className="fab fa-instagram fa-lg white-text mx-md-4"/>
 							</a>
 
-							<a className="icons-sm" href="https://devmilan.com" target="_blank" rel="noopener noreferrer">
-								<i className="fab fa-pinterest fa-lg white-text ml-md-4"> </i>
+							<a className="icons-sm" href="https://devmilan.com" target="_blank" rel="noopener noreferrer" aria-label="Printerest">
+								<i className="fab fa-pinterest fa-lg white-text ml-md-4"/>
 							</a>
 						</div>
 					</div>
