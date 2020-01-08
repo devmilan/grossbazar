@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
+
+import React, { Component } from 'react';
 import axios from 'axios';
 import { getQueryStringValue, setQueryStringValue } from '../../util/queryString';
 
@@ -10,56 +10,58 @@ import Pagination from '../../components/pagination/Pagination';
 import SideFilter from '../../components/sideFilter/SideFilter';
 import ErrorBoundary from '../../util/ErrorBoundary';
 
-// const useQuery = () => {
-//   return new URLSearchParams(useLocation().search);
-// }
+class Listing extends Component {
 
-const Listing = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(getQueryStringValue('page') || 1);
-  const [subcategory, setSubcategory] = useState(getQueryStringValue('subcategory') || '');
-  const [limit, setLimit] = useState(getQueryStringValue('limit') || 12);
-  const [sortBy, setSortBy] = useState(getQueryStringValue('sort_by') || '');
-  const [priceLessthen, setPriceLessthen] = useState(getQueryStringValue('price_lte') || '');
-  const [priceGreterthen, setPriceGreterthen] = useState(getQueryStringValue('price_gte') || '');
-  const [totalResults, setTotalResults] = useState();
-  const [filters, setFilters] = useState();
+  state = {
+    products: [],
+    loading: false,
+    page: getQueryStringValue('page') || 1,
+    subcategory: getQueryStringValue('subcategory') || '',
+    limit: getQueryStringValue('limit') || 12,
+    sortBy: getQueryStringValue('sort_by') || '',
+    priceLessthen: getQueryStringValue('price_lte') || '',
+    totalResults: '',
+    filters: '',
+    filterChip:[]
+  }
 
-
-  // const query = useQuery();
-  const { categoryid } = useParams();
-  const location = useLocation();
-
-
-  useEffect(() => {
+  componentDidMount() {
     window.scrollTo(0, 0);
-    getProducts();
-  }, [location, page, sortBy, priceLessthen, priceGreterthen]);
+    this.getProducts();
+  };
 
-  const scrollTop = () => {
+  scrollTop = () => {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-  }
+  };
 
-  const pageClicked = (no) => {
-    setQueryStringValue('page', no)
-    setPage(no);
-    // scrollTop();
-  }
+  pageClicked = (no) => {
+    setQueryStringValue('page', no);
+    this.setState({ page: no },
+      () => this.scrollTop());
+  };
 
-  const onFilterclicked = (type, value) => {
+  onFilterclicked = (type, value) => {
     setQueryStringValue(type, value);
-  }
+    type === 'subcategory' && this.setState({ subcategory: value, page: 0 }, () => this.getProducts() );
+  };
 
-  const onSortByChange = (e) => {
+  onSortByChange = (e) => {
     setQueryStringValue('sort_by', e.target.value)
+  };
+
+
+  makeChip = () => {  
+    this.setState({
+      filterChip: {'subcategory': this.state.subcategory}
+    })
   }
 
+  getProducts = async () => {
+    this.setState({ loading: true });
+    const { subcategory, sortBy, priceLessthen, priceGreterthen, limit, page } = this.state;
+    const { categoryid } = this.props.match.params
 
-  const getProducts = async () => {
-
-    setLoading(true);
     const url = `https://grossbazar-api.herokuapp.com/api/products`;
     let filter = '';
 
@@ -74,58 +76,65 @@ const Listing = () => {
       );
 
       if (res.data.data && res.data.data.length > 0) {
-        setProducts(res.data.data);
-        setTotalResults(res.data.total);
-        setFilters(res.data.filters);
+        this.setState({
+          products: res.data.data,
+          totalResults: res.data.total,
+          filters: res.data.filters,
+          loading: false
+        });
       } else {
-        setProducts([]);
-        setTotalResults(0);
+        this.setState({
+          products: [],
+          totalResults: 0,
+          loading: false
+        })
       }
-
-      setLoading(false);
     } catch (err) {
       console.log('err in fetching product', err);
-      setLoading(false);
+      this.setState({ loading: false })
     }
   };
 
 
-  return (
-    <div className={css.product_listing} id="product-list">
-      {loading && <Loader />}
-      {!loading && products.length === 0 && <div className={css.no_product}> <h1>No products available</h1></div>}
-      {products && products.length > 0 &&
-        <div className={css.product_listing_container}>
-          <div className={css.left}>
-            {filters && <SideFilter onFilterclicked={onFilterclicked} filters={filters} />}
-          </div>
-          <div className={css.right}>
-            <div className={css.top_bar}>
-              <div>
-                {totalResults && <h4>{totalResults} Products Found</h4>}
-              </div>
-              <div className={css.sort_by}>
-                <select id="inputState" className="form-control" onChange={onSortByChange} defaultValue="price_asc">
-                  <option value="price_asc">Price low to high</option>
-                  <option value="price_dsc">Price high to low</option>
-                  <option value="name">By Name</option>
-                </select>
-              </div>
+  render() {
+    const { loading, limit, page, products, filters, totalResults } = this.state;
+    return (
+      <div className={css.product_listing} id="product-list">
+        {loading && <Loader />}
+        {!loading && products.length === 0 && <div className={css.no_product}> <h1>No products available</h1></div>}
+        {products && products.length > 0 &&
+          <div className={css.product_listing_container}>
+            <div className={css.left}>
+              {filters && <SideFilter onFilterclicked={this.onFilterclicked} filters={filters} />}
+            </div>
+            <div className={css.right}>
+              <div className={css.top_bar}>
+                <div>
+                  {totalResults && <h4>{totalResults} Products Found</h4>}
+                </div>
+                <div className={css.sort_by}>
+                  <select id="inputState" className="form-control" onChange={this.onSortByChange} defaultValue="price_asc">
+                    <option value="price_asc">Price low to high</option>
+                    <option value="price_dsc">Price high to low</option>
+                    <option value="name">By Name</option>
+                  </select>
+                </div>
 
-            </div>
-            <div className={css.product_list}>
-              {products.map((product, i) => (
-                <ErrorBoundary><ProductCard product={product} key={i} /></ErrorBoundary>
-              ))}
-            </div>
-            <div>
-              {totalResults && totalResults > limit && <Pagination totalResults={totalResults} itemPerPage={limit} page={page} onPageClick={pageClicked} />}
+              </div>
+              <div className={css.product_list}>
+                {products.map((product, i) => (
+                  <ErrorBoundary key={i}><ProductCard product={product} /></ErrorBoundary>
+                ))}
+              </div>
+              <div>
+                {totalResults && totalResults > limit && <Pagination totalResults={totalResults} itemPerPage={limit} page={page} onPageClick={this.pageClicked} />}
+              </div>
             </div>
           </div>
-        </div>
-      }
-    </div>
-  );
-};
+        }
+      </div>
+    );
+  }
+}
 
 export default Listing;
