@@ -4,6 +4,8 @@ import { useTransition, animated } from 'react-spring';
 import Layout from './pages/Layout';
 import Cart from './pages/cart/Cart';
 import Loader from './components/loader/Loader';
+import useAddToHomescreenPrompt from "./hooks/useAddToHomescreenPrompt";
+
 const Home = lazy(() => import('./pages/Home'));
 const Listing = lazy(() => import('./pages/listing/Listing'));
 const Details = lazy(() => import('./pages/Details'));
@@ -27,8 +29,28 @@ const App = () => {
     leave: { opacity: 0 },
   });
 
+  const [prompt, promptToInstall] = useAddToHomescreenPrompt();
+  const [isVisible, setVisibleState] = React.useState(false);
+
+  const hide = () => setVisibleState(false);
+
+  React.useEffect(
+    () => {
+      if (prompt) {
+        setVisibleState(true);
+      }
+    },
+    [prompt]
+  );
+
   return (
     <Layout>
+      <div onClick={hide}>
+        <button onClick={hide}>Close</button>
+        Hello! Wanna add to homescreen?
+        <button onClick={promptToInstall}>Add to homescreen</button>
+      </div>
+
       {transitions.map(({ item: location, props, key }) => (
         <animated.div key={key} style={props}>
           <Suspense fallback={renderLoader()}>

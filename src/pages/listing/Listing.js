@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
+import useFetch from "../../hooks/useFetch";
+
 import { getQueryStringValue, setQueryStringValue } from '../../util/queryString';
 
 import ProductCard from '../../components/productCard/ProductCard';
@@ -60,8 +62,7 @@ class Listing extends Component {
   getProducts = async () => {
     this.setState({ loading: true });
     const { subcategory, sortBy, priceLessthen, priceGreterthen, limit, page } = this.state;
-    const { categoryid } = this.props.match.params
-
+    const { categoryid } = this.props.match.params;
     const url = `https://grossbazar-api.herokuapp.com/api/products`;
     let filter = '';
 

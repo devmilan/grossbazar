@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import axios from 'axios';
+import useFetch from "../../hooks/useFetch";
 import { getQueryStringValue, setQueryStringValue } from '../../util/queryString';
 
 import ProductCard from '../../components/productCard/ProductCard';
