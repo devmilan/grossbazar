@@ -11,13 +11,15 @@ const useAddToHomescreenPrompt = () => {
   };
 
   React.useEffect(() => {
-    const ready = (e) => {
+
+    const setFromEvent = e => {
       e.preventDefault();
-      setState(e);
+      setState(e)
     };
-    window.addEventListener("beforeinstallprompt", ready);
+
+    window.addEventListener("beforeinstallprompt", setFromEvent);
     return () => {
-      window.removeEventListener("beforeinstallprompt", ready);
+      window.removeEventListener("beforeinstallprompt");
     };
   }, []);
 
