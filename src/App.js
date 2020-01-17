@@ -51,7 +51,7 @@ const App = () => {
         <button onClick={promptToInstall}>Add to homescreen</button>
       </div>
 
-      {transitions.map(({ item: location, props, key }) => (
+      {/* {transitions.map(({ item: location, props, key }) => (
         <animated.div key={key} style={props}>
           <Suspense fallback={renderLoader()}>
             <Switch location={location}>
@@ -71,7 +71,7 @@ const App = () => {
             </Switch>
           </Suspense>
         </animated.div>
-      ))}
+      ))} */}
     </Layout>
   );
 }
