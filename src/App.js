@@ -45,13 +45,7 @@ const App = () => {
 
   return (
     <Layout>
-      <div onClick={hide}>
-        <button onClick={hide}>Close</button>
-        Hello! Wanna add to homescreen?
-        <button onClick={promptToInstall}>Add to homescreen</button>
-      </div>
-
-      {/* {transitions.map(({ item: location, props, key }) => (
+      {transitions.map(({ item: location, props, key }) => (
         <animated.div key={key} style={props}>
           <Suspense fallback={renderLoader()}>
             <Switch location={location}>
@@ -71,7 +65,8 @@ const App = () => {
             </Switch>
           </Suspense>
         </animated.div>
-      ))} */}
+      ))}
+      <button onClick={promptToInstall}>Add to homescreen</button>
     </Layout>
   );
 }
