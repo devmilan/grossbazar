@@ -38,9 +38,10 @@ import useDebounce from '../../hooks/useDebounce'
                       <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#login">
                        Login & Signup
                       </button>
-                      <button type="button" className="btn btn-primary  btn-sm">
-                         <i className="fa fa-shopping-cart"></i> cart <span className="badge badge-light">4</span>
-                      </button>
+                      <Link to="/cart" role="button" className="btn btn-primary  btn-sm">
+                         <i className="fa fa-shopping-cart"></i> cart 
+                         {/* <span className="badge badge-light">4</span> */}
+                      </Link>
                 </div>
             </div>
             <Menu/>
