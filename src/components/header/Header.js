@@ -2,8 +2,28 @@ import React from 'react';
 import css from './Header.module.scss';
 import Menu from '../menu/Menu';
 import { Link } from 'react-router-dom';
+import useDebounce from '../../hooks/useDebounce'
 
  const Header = () => {
+    const [searchTerm, setSearchTerm] = React.useState("");
+    const debouncedValue = useDebounce(searchTerm, 500);
+    const [isLoading, setIsLoading] = React.useState(false);
+
+
+  React.useEffect(() => {
+    // const fetchBooks = async searchTerm => {
+    //   setIsLoading(true);
+    //   const result = await fetch(
+    //     `http://localhost:3001/books?q=${debouncedValue}`
+    //   );
+    //   const json = await result.json();
+    //   setIsLoading(false);
+    // };
+    // fetchBooks(debouncedValue);
+    console.log('debouncedValue', debouncedValue)
+  }, [debouncedValue]);
+
+
     return (
         <div className={css.header}>
             <div className={css.top_header}>
@@ -12,7 +32,7 @@ import { Link } from 'react-router-dom';
                 </Link>
                 <div className={css.search}>
                   <label id="lbl-main-menu-mob">Select Item</label>
-                  <input className={css.search_input} type="text" name="" placeholder="Search..." aria-labelledby="lbl-main-menu-mob"/>
+                  <input className={css.search_input} value={searchTerm} onChange={event => setSearchTerm(event.target.value)} id="search" placeholder="Search..." aria-labelledby="lbl-main-menu-mob"/>
                 </div>
                 <div className={css.account}>
                       <button type="button" className="btn btn-primary btn-sm" data-toggle="modal" data-target="#login">

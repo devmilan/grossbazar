@@ -11,6 +11,8 @@ import Loader from '../../components/loader/Loader';
 import Pagination from '../../components/pagination/Pagination';
 import SideFilter from '../../components/sideFilter/SideFilter';
 import ErrorBoundary from '../../util/ErrorBoundary';
+import { getFromCart, addToCart } from '../../Storage';
+import { toast } from 'react-toastify';
 
 class Listing extends Component {
 
@@ -96,6 +98,26 @@ class Listing extends Component {
     }
   };
 
+  handleAddToCart = (id) =>{
+    const currentCart = getFromCart();
+    if(currentCart){
+      const isSameProduct = Object.keys(currentCart).some(key => key === id )
+      if(isSameProduct){
+        currentCart[id] = {qty: currentCart[id].qty+1};
+        toast.success('🛒 Quantity Updated!', { autoClose: 2000 });
+      }else{
+        currentCart[id] = {qty:1};
+         toast.success('🛒 Item added to Cart!', { autoClose: 2000 });
+      }
+      addToCart(currentCart)
+    }else{
+      const cartObj = {};
+      cartObj[id] = {qty:1}
+       toast.success('🛒 Item added to Cart!', { autoClose: 2000 });
+      addToCart(cartObj)
+    }
+  }
+
 
   render() {
     const { loading, limit, page, products, filters, totalResults } = this.state;
@@ -124,7 +146,9 @@ class Listing extends Component {
               </div>
               <div className={css.product_list}>
                 {products.map((product, i) => (
-                  <ErrorBoundary key={i}><ProductCard product={product} /></ErrorBoundary>
+                  <ErrorBoundary key={i}>
+                    <ProductCard product={product} handleAddToCart={this.handleAddToCart}/>
+                  </ErrorBoundary>
                 ))}
               </div>
               <div>
