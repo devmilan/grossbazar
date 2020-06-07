@@ -109,6 +109,14 @@
   }
 }
 
+.btn-primary{
+  background-color: #673ab7;
+  border-color: #673ab7;
+  &:hover{
+    background-color: #522e92;
+    border-color: #522e92;
+  }
+}
 
 // common styles
 
@@ -119,3 +127,8 @@
         font-weight: normal;
         border-top: 1px solid #673ab71f;
     }
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}

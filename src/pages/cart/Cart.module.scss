@@ -4,7 +4,7 @@
     table{
         background-color: #fff;
         th {
-            border-bottom: 3px solid #0063d1;
+            border-bottom: 3px solid #ff6600;
             border-right: 1px solid #ebebeb;
             font-size: 16px;
             font-weight: 500;
@@ -31,5 +31,10 @@
             min-width: 180px;
         }
     }
-   
+   .checkout_btn{
+        display: flex;
+        width: 25%;
+        justify-content: center;
+        margin-left: auto;
+   }
 }

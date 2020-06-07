@@ -41,6 +41,12 @@ export const deleteProduct = async (id) => {
 };
 
 
+export const getCartData = async (ids) => {
+    const res = await axios.get(`${REACT_APP_API_URL}/cart?ids=${ids}`);
+    return res.data
+};
+
+
 //Autontication API
 
 export const register = async (name, email, password, role) => {
