@@ -79,9 +79,9 @@ const Footer = () => {
 				<div className="container-fluid">
 					Copyright &copy; {new Date().getFullYear()} GrossBazar | Build with
 					&#10084; by{' '}
-					<a href="https://devmilan.com" target="_blank" rel="noopener noreferrer">
-						Milan
-					</a>
+					{/* <a href="https://devmilan.com" target="_blank" rel="noopener noreferrer"> */}
+						Kamal
+					{/* </a> */}
 				</div>
 			</div>
 		</footer>

@@ -1,9 +1,8 @@
 import React, { lazy, Suspense } from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
+import { useDeviceDetect } from './hooks/useDeviceDetect';
 import Layout from './pages/Layout';
-import Cart from './pages/cart/Cart';
 import Loader from './components/loader/Loader';
-import Checkout from './pages/checkout/Checkout';
 
 const Home = lazy(() => import('./pages/Home'));
 const Listing = lazy(() => import('./pages/listing/Listing'));
@@ -15,17 +14,22 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsConditions = lazy(() => import('./pages/TermsConditions'));
 const Login = lazy(() => import('./pages/login/Login'));
 const Register = lazy(() => import('./pages/register/Register'));
-const Admin = lazy(() => import('./admin'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const Checkout = lazy(() => import('./pages/checkout/Checkout'));
+const Cart = lazy(() => import('./pages/cart/Cart'));
+const Admin = lazy(() => import('./admin'));
 
 const renderLoader = () => <Loader />;
 
 const App = () => {
-  ;
+  const location = useLocation();
+  const { isMobile } = useDeviceDetect();
+
+  console.log('isMobile======>', isMobile)
   return (
     <Layout>
       <Suspense fallback={renderLoader()}>
-        <Switch>
+        <Switch location={location} key={location.key}>
           <Route exact path="/" component={Home} />
           <Route exact path="/listing/:categoryid" render={({ match }) => <Listing match={match} key={match.params.categoryid} />} />
           <Route exact path="/details" component={Details} />

@@ -1,5 +1,16 @@
 import React, { useEffect } from 'react';
 import css from './Checkout.module.scss';
+import { motion } from 'framer-motion';
+
+
+const containerVariant = {
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1,
+  }
+}
 
 const Checkout = () => {
 
@@ -9,7 +20,7 @@ const Checkout = () => {
   }, [])
 
   return (
-    <div className={css.checkout_page}>
+    <motion.div className={css.checkout_page} variants={containerVariant} initial="hidden" animate="visible" >
 
       <div className={css.left}>
         <div className="accordion" id="accordionExample">
@@ -102,7 +113,9 @@ const Checkout = () => {
         </div>
         <div>Amount Payable -  ₹1,798</div>
       </div>
-    </div>
+    
+      {/* confirm order */}
+    </motion.div>
   )
 }
 export default Checkout;

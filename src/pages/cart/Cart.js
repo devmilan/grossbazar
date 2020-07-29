@@ -3,6 +3,18 @@ import css from './Cart.module.scss';
 import { getCartData } from '../../Api';
 import { getFromCart } from '../../Storage';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+
+const containerVariant = {
+  hidden:{
+    opacity:0
+  },
+  visible:{
+    opacity:1,
+  }
+}
+
 const Cart = () => {
 
   const [items, setItems] = useState([])
@@ -27,9 +39,9 @@ const Cart = () => {
 
 
   return (
-    <div className={css.cart_page}>
+    <motion.div className={css.cart_page} variants={containerVariant} initial="hidden" animate="visible" >
       {items && items.length > 0 &&
-        <div className="table-responsive">
+        <motion.div className="table-responsive" variants={containerVariant} initial="hidden" animate="visible">
           <table className="table table-bordered">
             <thead>
               <tr>
@@ -57,9 +69,9 @@ const Cart = () => {
               </tr>
             </tbody>
           </table>
-        </div>
+        </motion.div>
       }
-    </div>
+    </motion.div>
   )
 }
 export default Cart;
